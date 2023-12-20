@@ -1,0 +1,5 @@
+{
+	"vim.cursorStylePerMode.insert": "",
+	"vim.cursorStylePerMode.normal": "",
+	"vim.disableExtension": true
+}
