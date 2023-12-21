@@ -14,6 +14,8 @@ void	*ft_memcpy(void	*dest, const	void	*src, size_t	n)
 
 	us =  (unsigned char*)src;
 	ud = (unsigned char*)dest;
+	if (src == dest)
+		return (us);
 
 	i = 0;
 	if (!us && !ud )
@@ -37,3 +39,10 @@ void	*ft_memcpy(void	*dest, const	void	*src, size_t	n)
 
 //     return 0;
 // }
+
+int main()
+{
+	char	*ptr = "hello";
+	ft_memcpy(ptr,ptr,5);
+
+}
