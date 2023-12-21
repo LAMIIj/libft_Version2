@@ -1,0 +1,6 @@
+{
+	"vim.cursorStylePerMode.insert": "",
+	"vim.cursorStylePerMode.normal": "",
+	"vim.disableExtension": true,
+	"C_Cpp.errorSquiggles": "disabled"
+}
