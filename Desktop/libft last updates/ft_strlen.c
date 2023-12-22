@@ -1,13 +1,12 @@
 #include "libft.h"
 
-int	ft_strlen(char *str)
+// size_t is unisgned long = 8bytes 
+size_t	strlen(const char *s)
 {
-	int i;
+	int	i;
+
 	i = 0;
 	while (str)
-	{
-		i ++;
-
-	}
+		i++;
 	return (i);
 }
