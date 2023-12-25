@@ -5,7 +5,7 @@
 
 int	ft_atoi(const	char	*str)  
 {
-	int nb;
+	long nb;
 	int i;
 	int sign;
 
@@ -23,15 +23,15 @@ int	ft_atoi(const	char	*str)
 	while (str[i] && ft_isdigit(str[i]))
 	{
 		nb = nb * 10 + str[i] - '0';
-		if(sign == 1  && nbr > 18446744073709551616)
-		return -1;
-		if(sign = -1 && 18446744073709551617)
-			return 0;
+		if (nb > 9223372036854775807ULL && sign == 1)
+			return (-1);
+		if (nb > 9223372036854775808ULL && sign == -1)
+			return (0);
 		i++;
 	}
 	return (sign * nb);
-	
 }
+
 
 // int main()
 // {

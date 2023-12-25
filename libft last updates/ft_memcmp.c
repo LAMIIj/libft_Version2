@@ -17,18 +17,3 @@ int	ft_memcmp(const	void *s1, const	void	*s2, size_t	n)
 		i ++;
 	return (s[i] - ss[i]); 
 }
-
-// int main()
-// {
-// 	char	str[] = "jijijdjun";
-// 	char	s[] = "jiji";
-
-// 	int result = ft_memcmp(str,s,5);
-// 	if (result > 0)
-// 		printf("second");
-// 	else if (result == 0)
-// 		printf("equal");
-// 	else 
-// 		printf("fisrt little ");
-// 	return 0;
-// }

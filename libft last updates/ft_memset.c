@@ -8,11 +8,11 @@ void	*ft_memset(void	*s, int	c, size_t	n)
 	size_t	i;
 
 	i = 0;
-	us = (unsigned char*)s;
+	us = (unsigned char *)s;
 
 	while (i < n)
 	{
-		us [i] = (unsigned	char)c;
+		us [i] = c;
 		i ++;
 	}
 	return (s);

@@ -1,7 +1,5 @@
 #include "libft.h"
-#include <stddef.h>
-#include <stdio.h>
-#include <string.h> 
+
 // overlapping bus error 
 // bus cpu tansformation to memo 
 
@@ -30,7 +28,7 @@ void	*ft_memcpy(void	*dest, const	void	*src, size_t	n)
 
 // int main() {
 //     char source[30] = "World!";
-//     char destination[30] = ""; // Make sure the destination has enough space
+//     char destination[30] = "";
 //     ft_memcpy(source, source, strlen(source) + 1 );
 
 //     // result
@@ -44,5 +42,6 @@ int main()
 {
 	char	*ptr = "hello";
 	ft_memcpy(ptr,ptr,5);
-
+	// memcpy(ptr,ptr,5);
+	printf("source : %s",ptr);
 }
