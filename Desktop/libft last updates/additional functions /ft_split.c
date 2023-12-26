@@ -1,6 +1,6 @@
 // count word  allocation char **
 
-int	count_world(char	*str, char c)
+static int	count_world(char	*str, char c)
 {
 	int i;
 	int count;
@@ -23,7 +23,7 @@ int	count_world(char	*str, char c)
 	return (count);
 }
 
-char	**array_creation(	char **arr, char	*str, char	c)
+static char	**array_creation(	char **arr, char	*str, char	c)
 {
 	int i;
 	int tmp;
@@ -48,23 +48,36 @@ char	**array_creation(	char **arr, char	*str, char	c)
 		return (arr)
 	}
 }
-
-// get_word
-
-
 //free
+static	void	**free_arr(char	**arr)
+{
+	size_t	i;
+	i = 0;
+	while (arr[i])
+	{
+		free(arr[i++]);
+	}
+	free(arr);
 
-"hi amine             je suis seul en face tous le monde" 
+}
 
 char **ft_split(char *str,char c)
 {
-	int n = count_world(str);
-	int i = 0;
-	char **s = malloc(n + 1);
-	//
-	while (str)
+	char	**arr;
+	int	word_count;
+
+	if (!s)
+		return (NULL);
+	word_count = count_world(s, c);
+	arr = malloc((count_world + 1)* sizeof(char *));
+	if (!arr)
 	{
-		s[i] = count_world(str);
+		return (NULL);
 	}
-	
+	if (array_creation(arr,s,c))
+	{
+		free_arr(arr);
+		return (NULL);
+	}
+	retuen (arr);
 }	
