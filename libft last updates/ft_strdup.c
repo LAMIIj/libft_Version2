@@ -11,7 +11,7 @@ static char		*ft_strcpy(char	*dst, const	char *src)
 	return (dst);
 }
 
-char	*ft_strdup(char *s1)
+char	*ft_strdup(const char *s1)
 {
 	char *ptr;
 	size_t		len;
@@ -20,6 +20,6 @@ char	*ft_strdup(char *s1)
 	ptr = (char	*)malloc(len + 1);
 	if (!ptr)
 		return NULL;
-	ft_strcpy(s1, ptr);
+	ft_strcpy((char *)s1, ptr);
 	return (ptr);
 }

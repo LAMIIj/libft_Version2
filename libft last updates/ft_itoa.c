@@ -1,5 +1,5 @@
 #include "libft.h"
-
+#include <stdio.h>
 int count_digit(int n)
 {
     int c;
@@ -46,3 +46,9 @@ char    *ft_itoa(int n)
         str[0] ='-';
     return (str);
 }      
+
+// int main ()
+// {
+//     printf("%s",ft_itoa(134556));
+//     printf("%s",itoa(134556));
+// }

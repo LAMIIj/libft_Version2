@@ -14,7 +14,7 @@ char	*ft_strchr(const	char	*str, int	c)
 		i ++;
 	}
 	if (c == '\0')  // handling saperate nll case 
-		return &str[i];
+		return &((char *)str)[i];
 	return (NULL);
 }
 

@@ -38,10 +38,10 @@ void	*ft_memcpy(void	*dest, const	void	*src, size_t	n)
 //     return 0;
 // }
 
-int main()
-{
-	char	*ptr = "hello";
-	ft_memcpy(ptr,ptr,5);
-	// memcpy(ptr,ptr,5);
-	printf("source : %s",ptr);
-}
+// int main()
+// {
+// 	char	*ptr = "hello";
+// 	ft_memcpy(ptr,ptr,5);
+// 	// memcpy(ptr,ptr,5);
+// 	printf("source : %s",ptr);
+// }
