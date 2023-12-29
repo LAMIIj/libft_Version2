@@ -1,85 +1,78 @@
-//count word  allocation char **
 #include "libft.h"
 
-static int count_world(char	*str, char	c)
-{
-	int	i;
-	int	count;
-	int	x;
-
-	i = 0;
-	x = 0;
-	count = 0;
-	while (str[i])
-	{
-		if (str[i] == c)
-			x = 0;
-		else if (x == 0)
-		{
-			x = 1;
-			count ++;
-		}
-		i++;
-	}
-	return (count);
-}
-
-static	char	**array_creation(char **arr, char	*str, char	c)
-{
-	int	i;
-	int	tmp;
-	int	index;
-
-	i = 0;
-	index = 0;
-	while (str[i])
-	{
-		if (str[i] == c)
-		{
-			i++;
-			continue;
-		}
-		tmp = i;
-		while (str[i] != 'c' && str[i])
-			i++;
-		arr[index] = malloc (i - tmp + 1);
-		if (arr[index] == 0)
-			return (NULL);
-		ft_strlcpy(arr[index++], str + tmp, i - tmp + 1);
-		
-	}
-	arr[index] = (NULL);
-	return (arr);
-
-}
-//free
-
-static	void	free_arr(char	**arr)
+static void	array_clearing(char **arr)
 {
 	size_t	i;
+
 	i = 0;
 	while (arr[i])
 		free(arr[i++]);
 	free(arr);
-
 }
-char	**ft_split(char	*s,char	c)
+
+static int	count_words(char const *str, char c)
 {
-	char	**arr;
-	int	word_count;
+	int	cpt;
+	int	i;
+
+	cpt = 0;
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == c)
+		{
+			i++;
+			continue ;
+		}
+		cpt++;
+		while (str[i] != c && str[i])
+			i++;
+	}
+	return (cpt);
+}
+
+static char	**array_creating(char **arr, char const *str, char c)
+{
+	int	ind;
+	int	i;
+	int	temp;
+
+	ind = 0;
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == c)
+		{
+			i++;
+			continue ;
+		}
+		temp = i;
+		while (str[i] != c && str[i])
+			i++;
+		arr[ind] = malloc(i - temp + 1);
+		if (!arr[ind])
+			return (NULL);
+		ft_strlcpy(arr[ind++], str + temp, i - temp + 1);
+	}
+	arr[ind] = NULL;
+	return (arr);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**array;
+	int		words_count;
 
 	if (!s)
 		return (NULL);
-	word_count = count_world(s, c);
-	arr = malloc(word_count + 1* sizeof(char *));
-	if (!arr)
+	words_count = count_words(s, c);
+	array = malloc((words_count + 1) * sizeof(char *));
+	if (!array)
+		return (NULL);
+	if (!array_creating(array, s, c))
 	{
+		array_clearing(array);
 		return (NULL);
 	}
-	if (!array_creation(arr, s, c))
-	{
-		free_arr(arr);
-		return (NULL);
-	}
-	return (arr);
-}	
+	return (array);
+}
